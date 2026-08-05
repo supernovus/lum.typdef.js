@@ -1,0 +1,27 @@
+{
+  "name": "@lumjs/typdef",
+  "type": "module",
+  "version": "1.0.0",
+  "exports":
+  {
+    ".": "./lib/index.js",
+    "./base": "./lib/base.js",
+    "./dom": "./lib/dom.js",
+    "./package.json": "./package.json"
+  },
+  "devDependencies":
+  {
+    "@lumjs/tests": "^2.2.0",
+    "@happy-dom/global-registrator": "20.11.1"
+  },
+  "scripts":
+  {
+    "test": "lumtest.js"
+  },
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/supernovus/lum.typdef.js.git"
+  },
+  "license": "MIT"
+}
