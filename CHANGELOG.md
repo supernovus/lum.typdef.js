@@ -6,10 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-10-01
+### Fixed
+- An inaccurate test in `cloneElements()` helper function.
+
 ## [1.0.0] - 2026-08-05
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/supernovus/lum.typdef.js/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/supernovus/lum.typdef.js/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/supernovus/lum.typdef.js/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/supernovus/lum.typdef.js/releases/tag/v1.0.0
 
