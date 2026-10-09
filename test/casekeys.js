@@ -3,7 +3,7 @@ import { TypDef, TypOpts } from '../lib/index.js';
 import { isTypItem } from '../lib/base.js';
 import { mixCase } from '../lib/tests.js';
 
-const plan = 17;
+const plan = 19;
 const t = Tests.new({ module: import.meta, plan });
 
 const OK = ' exists';
@@ -12,6 +12,8 @@ const K1 = 'HelloWorld';
 const K2 = 'AfterAll';
 const K3 = 'SaySomething';
 const K4 = 'EverythingIsAwesome';
+const K5 = 'lowlowlow';
+const K6 = 'GOINGUP';
 
 function runTest(name, opts, key) {
   let lkey = key.toLowerCase();
@@ -43,13 +45,25 @@ function runTest(name, opts, key) {
     t.is(td.findType(key), td[key], tn+`findType(${key}) is sane`);
     t.is(td.findType(mkey), null, tn+`findType(${mkey}) is null`);
   }
-
 }
 
 runTest('default opts', {}, K1);
 runTest('keyLower on', { keyLower: true }, K2);
 runTest('keyUpper on', { keyUpper: true }, K3);
 runTest('both on', { keyLower: true, keyUpper: true }, K4);
+
+function testNoDups(name, opts) {
+  let tn = `[${name}] `;
+  let td;
+  let build = () => {
+    td = TypDef(TypOpts(opts), K5, K6);
+  }
+
+  t.lives(build, tn+'lives');
+}
+
+testNoDups('keyLower on', { keyLower: true });
+testNoDups('keyUpper on', { keyUpper: true });
 
 t.done();
 export default t;
